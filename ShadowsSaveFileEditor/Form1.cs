@@ -125,6 +125,14 @@ namespace ShadowsSaveFileEditor
 
         private void CodeEditor_KeyDown(object sender, KeyEventArgs e)
         {
+            if (Data.keysclicked < 10)
+            {
+                Data.keysclicked = Data.keysclicked + 1;
+                return;
+            }else
+            {
+                Data.keysclicked = 0;
+            }
             highlightjson();
         }
     }
