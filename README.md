@@ -1,5 +1,5 @@
-# Shadows Save File Editor [WINDOWS NATIVE!!!]
-a Schedule 1 save file Editor
+# Shadows Save File Editor
+a Schedule 1 save file Editor [WINDOWS NATIVE!!!]
 
 everything is self explanatory this tool allows you to modify semi easily the save file of Schedule I (1)
 
