@@ -3,7 +3,6 @@ using System.IO;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Drawing;
-using UnityEngine.InputSystem;
 
 namespace ShadowsSaveFileEditor
 {
