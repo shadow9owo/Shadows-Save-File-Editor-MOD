@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ShadowsSaveFileEditor
+﻿namespace ShadowsSaveFileEditor
 {
     class Data
     {
         public static bool edited = false;
         public static string openedfilepath = "";
         public static int keysclicked = 0;
+        public static string userselectedroot = UnityUtils.getpersistantpath();
     }
 }

@@ -38,6 +38,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.outputlabel = new System.Windows.Forms.Label();
+            this.ChangeRoot = new System.Windows.Forms.Button();
+            this.rootlabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Input1
@@ -114,7 +116,7 @@
             // helplink
             // 
             this.helplink.AutoSize = true;
-            this.helplink.Location = new System.Drawing.Point(373, 180);
+            this.helplink.Location = new System.Drawing.Point(373, 44);
             this.helplink.Name = "helplink";
             this.helplink.Size = new System.Drawing.Size(35, 13);
             this.helplink.TabIndex = 7;
@@ -153,11 +155,35 @@
             this.outputlabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.outputlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.outputlabel.ForeColor = System.Drawing.Color.White;
-            this.outputlabel.Location = new System.Drawing.Point(13, 158);
+            this.outputlabel.Location = new System.Drawing.Point(8, 158);
             this.outputlabel.Name = "outputlabel";
             this.outputlabel.Size = new System.Drawing.Size(71, 20);
             this.outputlabel.TabIndex = 10;
             this.outputlabel.Text = "output :";
+            // 
+            // ChangeRoot
+            // 
+            this.ChangeRoot.BackColor = System.Drawing.Color.Black;
+            this.ChangeRoot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ChangeRoot.ForeColor = System.Drawing.Color.White;
+            this.ChangeRoot.Location = new System.Drawing.Point(333, 13);
+            this.ChangeRoot.Name = "ChangeRoot";
+            this.ChangeRoot.Size = new System.Drawing.Size(75, 23);
+            this.ChangeRoot.TabIndex = 11;
+            this.ChangeRoot.Text = "Change root";
+            this.ChangeRoot.UseVisualStyleBackColor = false;
+            this.ChangeRoot.Click += new System.EventHandler(this.ChangeRoot_Click);
+            // 
+            // rootlabel
+            // 
+            this.rootlabel.AutoSize = true;
+            this.rootlabel.BackColor = System.Drawing.Color.Transparent;
+            this.rootlabel.ForeColor = System.Drawing.Color.White;
+            this.rootlabel.Location = new System.Drawing.Point(9, 178);
+            this.rootlabel.Name = "rootlabel";
+            this.rootlabel.Size = new System.Drawing.Size(35, 13);
+            this.rootlabel.TabIndex = 12;
+            this.rootlabel.Text = "label3";
             // 
             // Macros
             // 
@@ -165,6 +191,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(420, 283);
+            this.Controls.Add(this.rootlabel);
+            this.Controls.Add(this.ChangeRoot);
             this.Controls.Add(this.outputlabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -180,6 +208,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Macros";
+            this.Load += new System.EventHandler(this.Macros_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,5 +226,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label outputlabel;
+        private System.Windows.Forms.Button ChangeRoot;
+        private System.Windows.Forms.Label rootlabel;
     }
 }

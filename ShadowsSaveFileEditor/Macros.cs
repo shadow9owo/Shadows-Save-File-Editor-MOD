@@ -1,14 +1,7 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace ShadowsSaveFileEditor
 {
@@ -76,6 +69,17 @@ namespace ShadowsSaveFileEditor
                     Output.Text = Output.Text + "\n" + item;
                 }
             }
+        }
+
+        private void ChangeRoot_Click(object sender, EventArgs e)
+        {
+            Data.userselectedroot = Interaction.InputBox("PATH TO DIR ROOT", UnityUtils.getpersistantpath());
+            rootlabel.Text = "root variable: " + Data.userselectedroot;
+        }
+
+        private void Macros_Load(object sender, EventArgs e)
+        {
+            rootlabel.Text = "root variable: " + Data.userselectedroot;
         }
     }
 }
