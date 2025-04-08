@@ -6,3 +6,5 @@ everything is self explanatory this tool allows you to modify semi easily the sa
 developed in c sharp .net 4.8.1 in 2 days
 
 works as of 08/04/2025
+
+thanks for the support on steam i appreciate it
