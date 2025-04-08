@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Drawing;
 using Newtonsoft.Json;
+using System.Threading;
 
 namespace ShadowsSaveFileEditor
 {
@@ -201,6 +202,17 @@ namespace ShadowsSaveFileEditor
                     return;
                 }
             }
+        }
+
+        private void Macros_Click(object sender, EventArgs e)
+        {
+            //https://stackoverflow.com/questions/47438631/c-sharp-open-form-in-a-new-thread-or-task
+            Thread _thread = new Thread(() =>
+            {
+                Application.Run(new Macros());
+            });
+            _thread.SetApartmentState(ApartmentState.STA);
+            _thread.Start();
         }
     }
 }

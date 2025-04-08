@@ -34,6 +34,7 @@
             this.credits = new System.Windows.Forms.LinkLabel();
             this.OpenObject = new System.Windows.Forms.Button();
             this.CodeEditor = new System.Windows.Forms.RichTextBox();
+            this.Macros = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ObjectCount
@@ -81,7 +82,7 @@
             // 
             this.credits.ActiveLinkColor = System.Drawing.Color.Blue;
             this.credits.AutoSize = true;
-            this.credits.Location = new System.Drawing.Point(537, 536);
+            this.credits.Location = new System.Drawing.Point(429, 535);
             this.credits.Name = "credits";
             this.credits.Size = new System.Drawing.Size(38, 13);
             this.credits.TabIndex = 3;
@@ -115,12 +116,27 @@
             this.CodeEditor.Text = "";
             this.CodeEditor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CodeEditor_KeyDown);
             // 
+            // Macros
+            // 
+            this.Macros.BackColor = System.Drawing.Color.Black;
+            this.Macros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Macros.ForeColor = System.Drawing.Color.White;
+            this.Macros.Location = new System.Drawing.Point(473, 526);
+            this.Macros.Name = "Macros";
+            this.Macros.Size = new System.Drawing.Size(102, 23);
+            this.Macros.TabIndex = 6;
+            this.Macros.TabStop = false;
+            this.Macros.Text = "Macros";
+            this.Macros.UseVisualStyleBackColor = false;
+            this.Macros.Click += new System.EventHandler(this.Macros_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlText;
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.Macros);
             this.Controls.Add(this.CodeEditor);
             this.Controls.Add(this.OpenObject);
             this.Controls.Add(this.credits);
@@ -146,6 +162,7 @@
         private System.Windows.Forms.LinkLabel credits;
         private System.Windows.Forms.Button OpenObject;
         private System.Windows.Forms.RichTextBox CodeEditor;
+        private System.Windows.Forms.Button Macros;
     }
 }
 
