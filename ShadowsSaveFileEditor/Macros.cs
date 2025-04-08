@@ -27,7 +27,7 @@ namespace ShadowsSaveFileEditor
         private void Find_Click(object sender, EventArgs e)
         {
             Output.Text = "finding...";
-            if (!(string.IsNullOrEmpty(Input1.Text)))
+            if (string.IsNullOrEmpty(Input1.Text))
             {
                 Output.Text = Output.Text + "\naction cancelled.";
                 return;
@@ -49,7 +49,7 @@ namespace ShadowsSaveFileEditor
         {
             Output.Text = "replacing...";
             DialogResult a = MessageBox.Show("WARNING THIS IS AN UNSAFE FUNCTION\n\nif used incorrecly this function may corrupt your save file!!!\n\nare you sure you want to proceed?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (a == DialogResult.Yes && !(string.IsNullOrEmpty(Input1.Text) && string.IsNullOrEmpty(Input2.Text)))
+            if (a == DialogResult.Yes && (string.IsNullOrEmpty(Input1.Text) || string.IsNullOrEmpty(Input2.Text)))
             {
 
             }
