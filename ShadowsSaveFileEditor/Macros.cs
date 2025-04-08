@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,6 +43,16 @@ namespace ShadowsSaveFileEditor
         private void Replace_Click(object sender, EventArgs e)
         {
             Output.Text = "replacing...";
+            DialogResult a = MessageBox.Show("WARNING THIS IS AN UNSAFE FUNCTION\n\nif used incorrecly this function may corrupt your save file!!!\n\nare you sure you want to proceed?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            Output.Text = Output.Text + "action cancelled.";
+            if (a == DialogResult.Yes)
+            {
+
+            }
+            else
+            {
+                return;
+            }
             foreach (var item in UnityUtils.getobjects())
             {
                 if (File.ReadAllText(item).Contains(Input1.Text) && !allinstances.Checked)
