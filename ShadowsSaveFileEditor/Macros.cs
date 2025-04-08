@@ -27,7 +27,7 @@ namespace ShadowsSaveFileEditor
         private void Find_Click(object sender, EventArgs e)
         {
             Output.Text = "finding...";
-            if (!(string.IsNullOrEmpty(Input1.Text) && string.IsNullOrEmpty(Input2.Text)))
+            if (!(string.IsNullOrEmpty(Input1.Text)))
             {
                 Output.Text = Output.Text + "\naction cancelled.";
                 return;
