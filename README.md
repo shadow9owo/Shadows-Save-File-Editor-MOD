@@ -7,4 +7,4 @@ developed in c sharp .net 4.8.1
 in 2 days
 for the alternative build but most likely this tool will work with the main branch
 
-works as of 04/04/2025
+works as of 08/04/2025
