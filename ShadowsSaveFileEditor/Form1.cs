@@ -3,6 +3,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Drawing;
+using Newtonsoft.Json;
 
 namespace ShadowsSaveFileEditor
 {
@@ -91,6 +92,24 @@ namespace ShadowsSaveFileEditor
 
         private void SaveChanges_Click(object sender, EventArgs e)
         {
+            try 
+            { 
+                var obj = JsonConvert.DeserializeObject(CodeEditor.Text); 
+            } 
+            catch 
+            {
+                DialogResult a = MessageBox.Show("The Changes applied are invalid the save file if saved wont most likely work correctly.\nAre you sure you want to save?","Question",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+
+                if (a == DialogResult.Yes)
+                {
+
+                }else
+                {
+                    return;
+                }
+            }
+            Data.keysclicked = 0;
+            File.Move(Data.openedfilepath, Data.openedfilepath + ".bak");
             File.WriteAllLines(Data.openedfilepath, CodeEditor.Text.Split(new[] { "\n", "\r\n" }, StringSplitOptions.None));
         }
 
