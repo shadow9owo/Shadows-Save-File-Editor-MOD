@@ -31,11 +31,11 @@ namespace ShadowsSaveFileEditor
             {
                 if (File.ReadAllText(item).Contains(Input1.Text) && !allinstances.Checked)
                 {
-                    Output.Text = Output.Text + item;
+                    Output.Text = Output.Text + "\n" + item;
                     return;
                 }else if (File.ReadAllText(item).Contains(Input1.Text) && allinstances.Checked)
                 {
-                    Output.Text = Output.Text + item;
+                    Output.Text = Output.Text + "\n" + item;
                 }
             }
         }
@@ -44,27 +44,27 @@ namespace ShadowsSaveFileEditor
         {
             Output.Text = "replacing...";
             DialogResult a = MessageBox.Show("WARNING THIS IS AN UNSAFE FUNCTION\n\nif used incorrecly this function may corrupt your save file!!!\n\nare you sure you want to proceed?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            Output.Text = Output.Text + "action cancelled.";
             if (a == DialogResult.Yes)
             {
 
             }
             else
             {
+                Output.Text = Output.Text + "\naction cancelled.";
                 return;
             }
             foreach (var item in UnityUtils.getobjects())
             {
                 if (File.ReadAllText(item).Contains(Input1.Text) && !allinstances.Checked)
                 {
-                    Output.Text = Output.Text + item;
+                    Output.Text = Output.Text + "\n" +item;
                     File.WriteAllText(item, File.ReadAllText(item).Replace(Input1.Text, Input2.Text));
                     return;
                 }
                 else if (File.ReadAllText(item).Contains(Input1.Text) && allinstances.Checked)
                 {
                     File.WriteAllText(item,File.ReadAllText(item).Replace(Input1.Text, Input2.Text));
-                    Output.Text = Output.Text + item;
+                    Output.Text = Output.Text + "\n" + item;
                 }
             }
         }
