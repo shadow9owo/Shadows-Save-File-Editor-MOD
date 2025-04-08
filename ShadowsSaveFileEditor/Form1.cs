@@ -146,7 +146,7 @@ namespace ShadowsSaveFileEditor
 
         private void CodeEditor_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Escape)
+            if (e.KeyCode == Keys.Escape && string.IsNullOrEmpty(Data.openedfilepath))
             {
                 DialogResult a = MessageBox.Show("Are you sure you want to exit the file without saving?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
