@@ -49,11 +49,15 @@ namespace ShadowsSaveFileEditor
         {
             Output.Text = "replacing...";
             DialogResult a = MessageBox.Show("WARNING THIS IS AN UNSAFE FUNCTION\n\nif used incorrecly this function may corrupt your save file!!!\n\nare you sure you want to proceed?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (a == DialogResult.Yes && (string.IsNullOrEmpty(Input1.Text) || string.IsNullOrEmpty(Input2.Text)))
+            if (a == DialogResult.Yes && !(string.IsNullOrEmpty(Input1.Text) || string.IsNullOrEmpty(Input2.Text)))
             {
 
             }
-            else
+            else if ((string.IsNullOrEmpty(Input1.Text) || string.IsNullOrEmpty(Input2.Text)))
+            {
+                Output.Text = Output.Text + "\naction cancelled.";
+                return;
+            }else
             {
                 Output.Text = Output.Text + "\naction cancelled.";
                 return;
@@ -62,13 +66,13 @@ namespace ShadowsSaveFileEditor
             {
                 if (File.ReadAllText(item).Contains(Input1.Text) && !allinstances.Checked)
                 {
-                    Output.Text = Output.Text + "\n" +item;
+                    Output.Text = Output.Text + "\n" + item;
                     File.WriteAllText(item, File.ReadAllText(item).Replace(Input1.Text, Input2.Text));
                     return;
                 }
                 else if (File.ReadAllText(item).Contains(Input1.Text) && allinstances.Checked)
                 {
-                    File.WriteAllText(item,File.ReadAllText(item).Replace(Input1.Text, Input2.Text));
+                    File.WriteAllText(item, File.ReadAllText(item).Replace(Input1.Text, Input2.Text));
                     Output.Text = Output.Text + "\n" + item;
                 }
             }
