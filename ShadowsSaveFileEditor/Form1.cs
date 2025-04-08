@@ -148,7 +148,7 @@ namespace ShadowsSaveFileEditor
         {
             if (e.KeyCode == Keys.Escape)
             {
-                DialogResult a = MessageBox.Show("Are you sure you want to exit without saving?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult a = MessageBox.Show("Are you sure you want to exit the file without saving?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (a == DialogResult.Yes)
                 {
