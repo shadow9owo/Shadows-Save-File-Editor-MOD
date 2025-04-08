@@ -110,7 +110,11 @@ namespace ShadowsSaveFileEditor
             }
             Data.edited = false;
             Data.keysclicked = 0;
-            File.Move(Data.openedfilepath, Data.openedfilepath + ".bak");
+            try
+            {
+                File.Delete(Data.openedfilepath + ".bak");
+                File.Move(Data.openedfilepath, Data.openedfilepath + ".bak");
+            }catch { }
             File.WriteAllLines(Data.openedfilepath, CodeEditor.Text.Split(new[] { "\n", "\r\n" }, StringSplitOptions.None));
         }
 
@@ -146,7 +150,7 @@ namespace ShadowsSaveFileEditor
 
         private void CodeEditor_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Escape && !string.IsNullOrEmpty(Data.openedfilepath))
+            if (e.KeyCode == Keys.Escape && !string.IsNullOrEmpty(Data.openedfilepath) && Data.edited)
             {
                 DialogResult a = MessageBox.Show("Are you sure you want to exit the file without saving?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
