@@ -85,6 +85,7 @@
             this.credits.Name = "credits";
             this.credits.Size = new System.Drawing.Size(38, 13);
             this.credits.TabIndex = 3;
+            this.credits.TabStop = true;
             this.credits.Text = "credits";
             this.credits.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.credits_LinkClicked);
             // 
@@ -131,6 +132,7 @@
             this.Name = "Form1";
             this.ShowIcon = false;
             this.Text = "Shadows Save File Editor";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

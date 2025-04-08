@@ -108,6 +108,7 @@ namespace ShadowsSaveFileEditor
                     return;
                 }
             }
+            Data.edited = false;
             Data.keysclicked = 0;
             File.Move(Data.openedfilepath, Data.openedfilepath + ".bak");
             File.WriteAllLines(Data.openedfilepath, CodeEditor.Text.Split(new[] { "\n", "\r\n" }, StringSplitOptions.None));
@@ -139,13 +140,35 @@ namespace ShadowsSaveFileEditor
                 UpdateEditorUI();
                 UpdateUI();
                 highlightjson();
+                Data.edited = false;
             }
         }
 
         private void CodeEditor_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Escape)
+            {
+                DialogResult a = MessageBox.Show("Are you sure you want to exit without saving?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (a == DialogResult.Yes)
+                {
+
+                }
+                else
+                {
+                    SaveChanges_Click(sender,e);
+                    return;
+                }
+
+                Data.keysclicked = 0;
+                CodeEditor.Text = "";
+                Data.openedfilepath = "";
+                
+                return;
+            }
             if (Data.keysclicked < 10)
             {
+                Data.edited = true;
                 Data.keysclicked = Data.keysclicked + 1;
                 return;
             }else
@@ -153,6 +176,24 @@ namespace ShadowsSaveFileEditor
                 Data.keysclicked = 0;
             }
             highlightjson();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Data.edited)
+            {
+                DialogResult a = MessageBox.Show("You havent saved are you sure you want to quit?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (a == DialogResult.Yes)
+                {
+
+                }
+                else
+                {
+                    e.Cancel = true;
+                    return;
+                }
+            }
         }
     }
 }
