@@ -25,7 +25,7 @@ namespace ShadowsSaveFileEditor
                 Output.Text = Output.Text + "\naction cancelled.";
                 return;
             }
-            foreach (var item in UnityUtils.getobjects())
+            foreach (var item in UnityUtils.getobjects_usr())
             {
                 if (File.ReadAllText(item).Contains(Input1.Text) && !allinstances.Checked)
                 {
@@ -55,7 +55,7 @@ namespace ShadowsSaveFileEditor
                 Output.Text = Output.Text + "\naction cancelled.";
                 return;
             }
-            foreach (var item in UnityUtils.getobjects())
+            foreach (var item in UnityUtils.getobjects_usr())
             {
                 if (File.ReadAllText(item).Contains(Input1.Text) && !allinstances.Checked)
                 {
