@@ -73,13 +73,23 @@ namespace ShadowsSaveFileEditor
 
         private void ChangeRoot_Click(object sender, EventArgs e)
         {
-            Data.userselectedroot = Interaction.InputBox("PATH TO DIR ROOT", UnityUtils.getpersistantpath());
-            rootlabel.Text = "root variable: " + Data.userselectedroot;
+            FolderBrowserDialog dialog = new FolderBrowserDialog();
+            dialog.SelectedPath = UnityUtils.getpersistantpath();
+            dialog.ShowNewFolderButton = false;
+            dialog.ShowDialog();
+            if (string.IsNullOrEmpty(dialog.SelectedPath))
+            {
+                return;
+            }
+            Data.userselectedroot = dialog.SelectedPath;
+            rootlabel.Text = UnityUtils.captext("root variable: " + Data.userselectedroot,64);
+            toolTip1.SetToolTip(rootlabel, Data.userselectedroot);
         }
 
         private void Macros_Load(object sender, EventArgs e)
         {
-            rootlabel.Text = "root variable: " + Data.userselectedroot;
+            rootlabel.Text = UnityUtils.captext("root variable: " + Data.userselectedroot,64);
+            toolTip1.SetToolTip(rootlabel, Data.userselectedroot);
         }
     }
 }

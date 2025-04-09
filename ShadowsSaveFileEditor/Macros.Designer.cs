@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Input1 = new System.Windows.Forms.RichTextBox();
             this.Input2 = new System.Windows.Forms.RichTextBox();
             this.Output = new System.Windows.Forms.RichTextBox();
@@ -40,12 +41,15 @@
             this.outputlabel = new System.Windows.Forms.Label();
             this.ChangeRoot = new System.Windows.Forms.Button();
             this.rootlabel = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // Input1
             // 
+            this.Input1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(8)))), ((int)(((byte)(8)))));
             this.Input1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Input1.DetectUrls = false;
+            this.Input1.ForeColor = System.Drawing.Color.White;
             this.Input1.Location = new System.Drawing.Point(12, 44);
             this.Input1.Name = "Input1";
             this.Input1.Size = new System.Drawing.Size(268, 18);
@@ -55,8 +59,10 @@
             // 
             // Input2
             // 
+            this.Input2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(8)))), ((int)(((byte)(8)))));
             this.Input2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Input2.DetectUrls = false;
+            this.Input2.ForeColor = System.Drawing.Color.White;
             this.Input2.Location = new System.Drawing.Point(12, 123);
             this.Input2.Name = "Input2";
             this.Input2.Size = new System.Drawing.Size(268, 18);
@@ -66,8 +72,10 @@
             // 
             // Output
             // 
+            this.Output.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(8)))), ((int)(((byte)(8)))));
             this.Output.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Output.DetectUrls = false;
+            this.Output.ForeColor = System.Drawing.Color.White;
             this.Output.Location = new System.Drawing.Point(12, 195);
             this.Output.Name = "Output";
             this.Output.ReadOnly = true;
@@ -185,6 +193,17 @@
             this.rootlabel.TabIndex = 12;
             this.rootlabel.Text = "label3";
             // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 5000;
+            this.toolTip1.BackColor = System.Drawing.Color.Transparent;
+            this.toolTip1.ForeColor = System.Drawing.Color.IndianRed;
+            this.toolTip1.InitialDelay = 0;
+            this.toolTip1.ReshowDelay = 100;
+            this.toolTip1.ToolTipTitle = "Path";
+            this.toolTip1.UseAnimation = false;
+            this.toolTip1.UseFading = false;
+            // 
             // Macros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -228,5 +247,6 @@
         private System.Windows.Forms.Label outputlabel;
         private System.Windows.Forms.Button ChangeRoot;
         private System.Windows.Forms.Label rootlabel;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

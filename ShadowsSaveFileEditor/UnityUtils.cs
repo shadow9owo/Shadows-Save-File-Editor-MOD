@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Windows.Forms.Design;
 
 namespace ShadowsSaveFileEditor
 {
@@ -38,6 +39,22 @@ namespace ShadowsSaveFileEditor
                 c.Add(file);
             }
             return c;
+        }
+        public static string captext(string main,int lenght)
+        {
+            string a = "";
+            for (int i = 0; i < main.Length; i++)
+            {
+                if (i > lenght)
+                {
+                    a = a + "...";
+                    return a;
+                }else
+                {
+                    a = a + main[i];
+                }
+            }
+            return a;
         }
     }
 }
