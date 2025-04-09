@@ -51,6 +51,7 @@
             this.Input1.DetectUrls = false;
             this.Input1.ForeColor = System.Drawing.Color.White;
             this.Input1.Location = new System.Drawing.Point(12, 44);
+            this.Input1.Multiline = false;
             this.Input1.Name = "Input1";
             this.Input1.Size = new System.Drawing.Size(268, 18);
             this.Input1.TabIndex = 0;
@@ -64,6 +65,7 @@
             this.Input2.DetectUrls = false;
             this.Input2.ForeColor = System.Drawing.Color.White;
             this.Input2.Location = new System.Drawing.Point(12, 123);
+            this.Input2.Multiline = false;
             this.Input2.Name = "Input2";
             this.Input2.Size = new System.Drawing.Size(268, 18);
             this.Input2.TabIndex = 1;

@@ -70,7 +70,6 @@ namespace ShadowsSaveFileEditor
             CodeEditor.Select(start, 0);
         }
 
-
         private void UpdateEditorUI()
         {
             string a = "";
